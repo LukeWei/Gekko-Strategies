@@ -18,15 +18,11 @@ var strat = {
 
 		this.addIndicator('neuralnet', 'NN', this.settings.neuralnet);
 
-		// debug stuff
 		this.startTime = new Date();
-		/* MESSAGES */
 
-		// message the user about required history
 		log.info("====================================");
 		log.info('Running', this.name);
 		log.info('====================================');
-		log.info("Make sure your warmup period matches SMA_long and that Gekko downloads data if needed");
 
 	}, // init()
 
@@ -38,9 +34,10 @@ var strat = {
 				this.advice('short');
 			}
 
+			// buy
 			if (this.indicators.neuralnet.result.meanAlpha && this.indicators.neuralnet.result.meanAlpha > 1) {
 				this.advice('long');
-			} // buy
+			}
 
 	}, // check()
 
