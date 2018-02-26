@@ -6,8 +6,6 @@
 // req's
 var log = require('../core/log.js');
 var config = require('../core/util.js').getConfig();
-var convnetjs = require('convnetjs');
-var math = require('mathjs');
 
 // strategy
 var strat = {
@@ -17,7 +15,6 @@ var strat = {
 	{
 		// core
 		this.name = 'NN_Sample';
-		this.requiredHistory = config.tradingAdvisor.historySize;
 
 		this.addIndicator('neuralnet', 'NN', this.settings.neuralnet);
 
